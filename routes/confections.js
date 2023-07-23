@@ -14,17 +14,17 @@ const upload = multer({ dest: 'public/uploads/' });
 router.get('/', confectionsCtrl.index);
 // GET /confections
 router.get('/new', ensureLoggedIn, confectionsCtrl.new);
-// GET /confections/new (request new sneaker while logged in)
+// GET /confections/new (request new confection while logged in)
 router.get('/:id', confectionsCtrl.show);
-// GET /confections/:id (show sneaker)
+// GET /confections/:id (show confection)
 router.get('/:id/edit', ensureLoggedIn, confectionsCtrl.edit);
-// GET /confections/:id/edit (edit sneaker while logged in)
+// GET /confections/:id/edit (edit confection while logged in)
 router.put('/:id', ensureLoggedIn, confectionsCtrl.update);
-// PUT /confections/:id (update sneaker while logged in)
+// PUT /confections/:id (update confection while logged in)
 router.post('/', ensureLoggedIn, upload.single('avatar'), confectionsCtrl.create);
-// POST /confections (submit sneaker with image while logged in)
+// POST /confections (submit confection with image while logged in)
 router.delete('/:id', ensureLoggedIn, confectionsCtrl.delete);
-// DELETE /confections/:id (delete sneaker while logged in)
+// DELETE /confections/:id (delete confection while logged in)
 	
 module.exports = router;
 // Exports the router object
