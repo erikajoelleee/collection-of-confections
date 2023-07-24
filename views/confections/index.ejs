@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<body>
+  <h1 class="gradient-text"> Collection of Confections </h1>
+  <div id="collection">
+      <tbody>
+        <% confections.forEach(function(s) { %>
+        <tr>
+          <td>
+            <img src="<%= s.image.image.data %>" alt="Confection" />
+            <h3><%= s.name %></h3>
+            <a href="/confections/<%= s._id %>">Details</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<%- include('../partials/footer') %>

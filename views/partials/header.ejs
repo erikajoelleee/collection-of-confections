@@ -9,16 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <title>Collection of Confections</title>
 </head>
 <body>
     <nav>
-        <a href="/confections" <%- title === 'Dessert Database' ? 'class="active"' : '' %>>DESSERT DATABASE</a>
+        <a href="/confections" <%- title === 'Dessert Database' ? 'class="active"' : '' %>>Dessert Database</a>
         <% if (user) { %>
-          <a href="/confections/new" <%- title === 'Add Confection' ? 'class="active"' : '' %>>ADD</a>
-          <a href="/logout">LOG OUT</a>
+          <a href="/confections/new" <%- title === 'Add Confection' ? 'class="active"' : '' %>>Add</a>
+          <a href="/logout">Log Out</a>
         <% } else { %>
-          <a href="/auth/google" class="login">LOGIN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          <a href="/auth/google" class="login">Login</a>
         <% } %>
     </nav>
 </body>

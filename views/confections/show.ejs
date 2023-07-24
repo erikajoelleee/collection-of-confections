@@ -1,0 +1,111 @@
+<%- include('../partials/header') %>
+
+<h2>Confections</h2>
+<div class="confection-table" style="width: 18rem;">
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= confection.name %></div>
+  <div>Kind: </div>
+  <div><%= confection.kind %></div>
+  <div>Country: </div>
+  <div><%= confection.country %></div>
+  <div>Date Reviewed: </div>
+  <div><%= confection.dateReviewed %></div>
+  <div>History: </div>
+  <div><%= confection.history %></div>
+</section>
+<form id="new-form" action='/confections/<%= confection._id %>?_method=DELETE' method="POST">
+  <button type="submit">Delete Confection</button>
+</form>
+</div>
+
+<div id="confection-image">
+<img src="/<%=confection.image.image.data %>" alt="Confection">
+</div>
+
+<h2>Add Comment</h2>
+<div class="comment-form" style="width: 18rem;">
+<form id="add-comment-form" method="POST" action="/confections/<%= confection._id %>/comments">
+  <label>Comment:<br></label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <button type="submit">Add Comment</button>
+</div>
+</form>
+<h2>Comments</h2>
+<div style="width: 69rem">
+<% if (confection.comments.length) { %>
+<table class="comment-table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comment</th>
+        <th>Rating</th>
+        <th>Delete?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% confection.comments.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <td class="comment-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+          <td>
+            <% if (user?._id.equals(r.user)) { %>
+              <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
+                <div id="delete-button">
+                <button type="submit"><img src="https://www.simpleimageresizer.com/_uploads/photos/be93dfba/Delete-Button-PNG-High-Quality-Image_1_5.png" alt="deletepng" border="0" /></button>
+                </div>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }) %>
+      <tr>
+        <td><strong><%= (total / confection.comments.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
+</div>
+
+<h2>Update Confections</h2>
+<div class="update-form" style="width: 18rem;">
+<form id="edit-confection" action="/confections/<%= confection.id %>?_method=PUT" method="POST">
+    <label>Name:
+        <input type="text" name="name" value="<%= confection.name %>">
+    </label><br>
+    <label>Kind:
+        <select name="kind">
+          <% ['candy', 'bread', 'pastry', 'cookies', 'donut', 'pie', 'cake', 'ice cream', 'Other'].forEach(function(option) { %>
+            <option value="<%= option %>" <% confection.brand == option ? 'selected' : '' %>><%= option %></option>
+          <% }); %>
+        </select>
+    </label><br>
+    <label>Country:
+      <input type="text" name="country" value="<%= confection.country %>">
+    </label><br>
+    <label>Date Reviewed:
+        <input type="datetime-local" name="dateReviewed" value="<%= confection.dateReviewed %>">
+    </label><br>
+    <label>History:<br>
+        <textarea name="history"></textarea>
+    </label><br>
+    <button type="submit">Update Confection</button>
+</div>
+</form>
+    
+<%- include('../partials/footer') %>

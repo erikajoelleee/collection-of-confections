@@ -1,8 +1,33 @@
+* {
+  cursor: url(https://i.imgur.com/7k4w8JS.png), auto;
+  background: rgb(148, 57, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(148, 57, 84, 1) 0%,
+    rgba(167, 90, 111, 1) 100%
+  );
+  
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  color: #FFFFFF;
+}
+
+.gradient-text {
+  font-family: "Sacramento", cursive;
+  font-size: 50px;
+  background-color: #f9e39f;
+  background-image: linear-gradient(45deg, #f9e39f, #c1864f);
+  background-size: 100%;
+  background-repeat: repeat;
 }
 
 a {
-  color: #00B7FF;
+  color: #6082B6;
+}
+
+footer {
+  color: #FFFFFF;
 }

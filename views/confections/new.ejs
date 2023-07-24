@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<h2>Enter New Confection</h2>
+<div class="new-confection" style="width: 18rem">
+<form id="new-form" action="/confections" method="POST" enctype="multipart/form-data">
+  <label>Name:
+  <input type="text" name="name" required>
+  </label><br>
+  <label>Kind:
+    <select name="kind">
+      <option value="candy">candy</option>
+      <option value="bread">bread</option>
+      <option value="pastry">pastry</option>
+      <option value="cookies">cookies</option>
+      <option value="donut">donut</option>
+      <option value="pie">pie</option>
+      <option value="cake">cake</option>
+      <option value="ice cream">ice cream</option>
+      <option value="other">other</option>
+    </select>
+  </label><br>
+  <label>Country:
+    <input type="text" name="country">
+  </label><br>
+  <label>Date Reviewed:
+    <input type="datetime-local">
+  </label><br>
+  <label>History: <br>
+    <textarea name="history"></textarea>
+  </label><br>
+    <input type="submit" value="Add Confection">
+</div>
+<h2>Add Photo</h2>
+<div class="new-confection" style="width: 18rem">
+<img src="https://www.simpleimageresizer.com/_uploads/photos/be93dfba/Screenshot_2023-07-24_at_3.57.10_PM_1_25.png" alt="image">
+<input type="file" name="avatar" required>
+</div>
+</form>
+
+<%- include('../partials/footer') %>

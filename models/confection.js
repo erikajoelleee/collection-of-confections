@@ -41,20 +41,20 @@ const confectionSchema = new Schema(
     comments: [commentSchema],
     image: imgSchema,
     name: { type: String, required: true },
-    brand: {
+    kind: {
       type: String,
-      enum: ["sweets", "bread", "cookies", "donut", "pie", "cake", "ice cream", "other"],
+      enum: ["candy", "bread", "pastry", "cookies", "donut", "pie", "cake", "ice cream", "other"],
     },
     country: {
       type: String,
     },
-    dateAcquired: {
+    dateReviewed: {
       type: Date,
       default: function () {
         return new Date(new Date().setFullYear(new Date().getFullYear()));
       },
     },
-    notes: {
+    history: {
       type: String,
     }
   },
@@ -64,4 +64,4 @@ const confectionSchema = new Schema(
 );
 
 module.exports = mongoose.model("Confection", confectionSchema);
-// Compiles the schema into the sneaker model and exports it to perform CRUD operations in the database
+// Compiles the schema into the confection model and exports it to perform CRUD operations in the database

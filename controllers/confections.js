@@ -16,7 +16,7 @@ module.exports = {
 async function index(req, res) {
   // Retrieves all confections from the database and renders a view to display them in the collection
   const confections = await Confection.find({});
-  res.render("confections/index", { title: "COLLECTION", confections });
+  res.render("confections/index", { title: "Collection", confections });
 }
 
 async function show(req, res) {
@@ -24,12 +24,12 @@ async function show(req, res) {
   const confection = await Confection.findById(req.params.id);
   // Logs the confection object to the console and renders a view to display its details
   console.log("confection", confection);
-  res.render("confections/show", { title: "DETAILS", confection });
+  res.render("confections/show", { title: "Details", confection });
 }
 
 function newConfection(req, res) {
   // Renders a view for creating a new confection
-  res.render("confections/new", { title: "ADD Confection", errorMsg: "" });
+  res.render("confections/new", { title: "Add Confection", errorMsg: "" });
 }
 
 async function create(req, res) {
@@ -56,12 +56,12 @@ async function create(req, res) {
     const confection = await Confection.create(req.body);
     console.log(confection);
     // Redirects the user to the details page of the newly created confection
-    res.redirect(`/sneakers/${confection._id}`);
+    res.redirect(`/confections/${confection._id}`);
   } catch (err) {
     // If there is an error during the creation process, it is logged
     console.log(err);
     // Renders the new confection creation page again with an error message
-    res.render("confections/new", { title: "ADD CONFECTION", errorMsg: err.message });
+    res.render("confections/new", { title: "Add Confection", errorMsg: err.message });
   }
 }
 
@@ -89,12 +89,12 @@ async function update(req, res) {
     // If there is an error during the update process, it is logged
     console.log(err);
     // Renders the confection edit page
-    res.render("confections/edit", { title: "UPDATE CONFECTION" });
+    res.render("confections/edit", { title: "Update Confection" });
   }
 }
 
 async function edit(req, res) {
   // Retrieves a specific confection from the database based on the provided ID
   const confection = await Confection.findById(req.params.id);
-  res.render("confections/edit", { title: "UPDATE", confection });
+  res.render("confections/edit", { title: "Update", confection });
 }
