@@ -1,33 +1,64 @@
 * {
+  box-sizing: border-box;
   cursor: url(https://i.imgur.com/7k4w8JS.png), auto;
-  background: rgb(148, 57, 84);
-  background: linear-gradient(
-    90deg,
-    rgba(148, 57, 84, 1) 0%,
-    rgba(167, 90, 111, 1) 100%
-  );
-  
+  background-image: url(https://i.imgur.com/8699WFt.png),
+    linear-gradient(90deg, rgba(148, 57, 84, 1) 0%, rgba(167, 90, 111, 1) 100%);
+  background-position: top left, top left;
+  padding: 3px;
+  font-size: 2.7vmin;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+  background-clip: text;
+  color: transparent;
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
   padding: 50px;
-  font-family: 'Quicksand', sans-serif;
-  color: #FFFFFF;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+  grid-template-rows: 70px 5fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
 .gradient-text {
   font-family: "Sacramento", cursive;
   font-size: 50px;
-  background-color: #f9e39f;
-  background-image: linear-gradient(45deg, #f9e39f, #c1864f);
-  background-size: 100%;
-  background-repeat: repeat;
+  background: linear-gradient(45deg, #f9e39f, #c1864f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.confection-table,
+.comment-table,
+.comment-user {
+  text-decoration: none;
+  background-image: none;
+  color: #ffffff;
+  font-size: medium;
 }
 
 a {
-  color: #6082B6;
+  color: #6082b6;
+  text-decoration: none;
+  background-image: none;
 }
 
+button,
 footer {
-  color: #FFFFFF;
+  color: #ffffff;
 }
