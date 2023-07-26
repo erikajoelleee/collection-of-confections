@@ -26,10 +26,10 @@ With Collection of Confections, embark on a delectable journey to explore the wo
 
 # Getting Started
 
-[Click to View Project Planning](your Trello url here)
+https://trello.com/b/ezk0lb5N/project-2
 [Click to Play Connect Four!](your deployment url here)
 
 # Next Steps
 
-- Future enhancement one...
-- Future enhancement two... 
+- Improve the styling to create a cleaner interface
+- Add sections to filter the country or kind of dessert in database
