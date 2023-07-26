@@ -27,7 +27,7 @@ With Collection of Confections, embark on a delectable journey to explore the wo
 # Getting Started
 
 https://trello.com/b/ezk0lb5N/project-2
-[Click to Play Connect Four!](your deployment url here)
+https://collection-of-confections-fe8512da81c5.herokuapp.com/confections
 
 # Next Steps
 
