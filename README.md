@@ -9,8 +9,11 @@ With Collection of Confections, embark on a delectable journey to explore the wo
 # Screenshot
 
 <img src="https://i.imgur.com/RHewW6M.png">
-<img src="https://i.imgur.com/rm0U4rd.png">
-<img src="https://i.imgur.com/e8WTPeS.png">
+<img src="https://i.imgur.com/RHewW6M.png">
+<img src="https://i.imgur.com/u7h0XJS.png">
+<img src="https://i.imgur.com/fuFNKyw.png">
+<img src="https://i.imgur.com/39P9Xhy.png">
+<img src="https://i.imgur.com/PecNPeR.png">
 
 
 # Technologies Used
