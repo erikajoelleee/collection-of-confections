@@ -1,16 +1,21 @@
 <%- include('../partials/header') %>
 
-<main id="collection">
+<body>
   <h2 class="gradient-text">Collection of Confections <img class="pie" src="https://i.imgur.com/Mlgnzbl.png" alt="pie"></h2>
-  <div id="confections-container">
-    <% confections.forEach(function(s) { %>
-    <div class="confection-item">
-      <img src="<%= s.image.image.data %>" alt="Confection" />
-      <h3><%= s.name %></h3>
-      <a href="/confections/<%= s._id %>">Details</a>
-    </div>
-    <% }) %>
+  <div id="collection">
+      <tbody>
+        <% confections.forEach(function(s) { %>
+        <tr>
+          <td>
+            <img src="<%= s.image.image.data %>" alt="Confection" />
+            <h3><%= s.name %></h3>
+            <a href="/confections/<%= s._id %>">Details</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
   </div>
-</main>
+</body>
 
 <%- include('../partials/footer') %>
