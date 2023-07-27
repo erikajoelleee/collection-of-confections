@@ -21,6 +21,14 @@
   color: transparent;
 }
 
+.heart {
+  height: 30px;
+  width: 30px;
+  background-clip: text;
+  color: transparent;
+
+}
+
 body {
   width: 100vw;
   height: 100vh;

@@ -8,8 +8,10 @@ With Collection of Confections, embark on a delectable journey to explore the wo
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://i.imgur.com/RHewW6M.png">
+<img src="https://i.imgur.com/rm0U4rd.png">
+<img src="https://i.imgur.com/e8WTPeS.png">
+
 
 # Technologies Used
 
@@ -26,10 +28,14 @@ With Collection of Confections, embark on a delectable journey to explore the wo
 
 # Getting Started
 
-https://trello.com/b/ezk0lb5N/project-2
-https://collection-of-confections-fe8512da81c5.herokuapp.com/confections
+- [Trello](https://trello.com/b/ezk0lb5N/project-2)
+- [Collection of Confections](https://collection-of-confections-fe8512da81c5.herokuapp.com/)
 
 # Next Steps
 
 - Improve the styling to create a cleaner interface
 - Add sections to filter the country or kind of dessert in database
+- Include models of restaurants and favorites for users
+- Create an administrator page that allows for fact-checking information in the dessert database
+- Create a customizable user profiles for users to track their favorite desserts, new items to try, and a custom "Things you might like" section
+- Create shareable links from the database for user ease

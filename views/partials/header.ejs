@@ -16,12 +16,12 @@
 </head>
 <body>
     <nav>
-        <a href="/confections" <%- title === 'Dessert Database' ? 'class="active"' : '' %>>Dessert Database</a>
+        <a href="/confections" <%- title === 'Dessert Database' ? 'class="active"' : '' %>><img class="heart" src="https://i.imgur.com/OiNJt6i.gif" alt="heart">Dessert Database</a>
         <% if (user) { %>
           <a href="/confections/new" <%- title === 'Add Confection' ? 'class="active"' : '' %>>Add</a>
           <a href="/logout">Log Out</a>
         <% } else { %>
-          <a href="/auth/google" class="login">Login<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png">Login</a>
         <% } %>
     </nav>
 <main>
