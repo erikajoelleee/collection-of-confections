@@ -7,7 +7,7 @@ module.exports = {
 // Exports objects that contains these functions, which can be accessed and used by other parts of the application
 
 function deleteComment(req, res) {
-// Deletes comments associated with the confection
+  // Deletes comments associated with the confection
   Confection.findOne({
     // Uses the fineOne method on the confection model to find a confection that matches the comment and user ID
     "comments._id": req.params.id,
@@ -18,7 +18,7 @@ function deleteComment(req, res) {
     confection.comments.remove(req.params.id);
     // If a matching confection is found, it removes the comment form the comments array
     confection
-    // Then it saves the modified confection object
+      // Then it saves the modified confection object
       .save()
       .then(function () {
         // If the save operation is successful, it redirects the user to the details page of the corresponding confection

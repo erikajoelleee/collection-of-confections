@@ -9,7 +9,7 @@ module.exports = {
   create,
   delete: deleteConfection,
   edit,
-  update
+  update,
 };
 // Exports objects that contains these functions, which can be accessed and used by other parts of the application
 
@@ -34,7 +34,7 @@ function newConfection(req, res) {
 
 async function create(req, res) {
   // Handles creation of a new confection
-  console.log(req.body)
+  console.log(req.body);
   // Checks if the uploaded file is a valid image by calling the isIMG function (jpeg or png)
   if (!isImg(req.file.mimetype)) {
     console.log("You must upload a jpeg or png");
@@ -61,7 +61,10 @@ async function create(req, res) {
     // If there is an error during the creation process, it is logged
     console.log(err);
     // Renders the new confection creation page again with an error message
-    res.render("confections/new", { title: "Add Confection", errorMsg: err.message });
+    res.render("confections/new", {
+      title: "Add Confection",
+      errorMsg: err.message,
+    });
   }
 }
 
@@ -82,9 +85,11 @@ function isImg(mimetype) {
 async function update(req, res) {
   try {
     // Updates an existing confection in the database with the provided information
-    await Confection.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
+    await Confection.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+    });
     // Redirects the user to the confections collection page
-    res.redirect("/confections"); 
+    res.redirect("/confections");
   } catch (err) {
     // If there is an error during the update process, it is logged
     console.log(err);

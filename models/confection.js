@@ -43,7 +43,17 @@ const confectionSchema = new Schema(
     name: { type: String, required: true },
     kind: {
       type: String,
-      enum: ["candy", "bread", "pastry", "cookies", "donut", "pie", "cake", "ice cream", "other"],
+      enum: [
+        "candy",
+        "bread",
+        "pastry",
+        "cookies",
+        "donut",
+        "pie",
+        "cake",
+        "ice cream",
+        "other",
+      ],
     },
     country: {
       type: String,
@@ -56,7 +66,7 @@ const confectionSchema = new Schema(
     },
     history: {
       type: String,
-    }
+    },
   },
   {
     timestamps: true,
